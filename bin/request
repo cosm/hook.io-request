@@ -3,8 +3,7 @@
 var RequestHook = require('../lib/request').RequestHook;
 
 var myhook = new RequestHook({ 
-  name: "the-request-hook",
-  debug: true
+  name: "the-request-hook"
 });
 
 myhook.start();
