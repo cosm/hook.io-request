@@ -2,7 +2,7 @@
   "author": "Marak Squires <marak.squires@gmail.com>",
   "name": "hook.io-request",
   "description": "a simple Hook for making outgoing http requests",
-  "version": "0.3.2",
+  "version": "0.4.0",
   "repository": {
     "type": "git",
     "url": "git://github.com/hookio/request.git"
@@ -15,7 +15,7 @@
     "node": ">= v0.4.7"
   },
   "dependencies": {
-    "hook.io" : "0.6.x",
+    "hook.io" : "0.7.x",
     "request": "2.0.x"
   },
   "devDependencies": {}

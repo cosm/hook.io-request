@@ -4,48 +4,41 @@
 
 ## Installation
 
-     npm install hook.io-repl -g
+     npm install hook.io-request -g
 
 ## Usage
 
-     hookio-repl
+     hookio-request
 
 ## Hook Events Names
 
-**sendRequest** *sends HTTP request*:
+**http::request** *sends HTTP request*:
 
-**gotResponse** *event emitted when request comes back*:
+**http::request::result** *event emitted when request comes back*:
+
+**http::request::error** *event emitted when error comes back*:
+
 
 ## Example
 
 ```javascript
 
-//
-// requestOptions is a 1:1 mapping to https://github.com/mikeal/request API 
-//
-var requestOptions = {
-  "url": "http://google.com"
-};
+  //
+  // options is a 1:1 mapping to https://github.com/mikeal/request API 
+  //
+  var options = {
+    url: "http://google.com/"
+  };
+  
+  //
+  // Make a request with a callback
+  //
+  //
+  hook.emit('http::request', options, function(){
+    //console.log('http::request has responded')
+  });
 
-myHook.emit('sendRequest', requestOptions);
-
-myHook.on('*::gotResponse', function(data){
-  
-  console.log(data);
-  
-  /* Outputs:
-    {
-       err:         err,
-       statusCode:  response.statusCode,
-       headers:     response.headers,
-       body:        response.body
-       hook:     options,
-       requestTime: requestTime
-     }
-   */
-  
-})
 ```
 
-Note that the "hook" key contains original parameterts passed to request,
+Note that the "hook" key contains original parameters passed to request,
 making it ideal to put some other values for handling the request context (such as linking the request to an id, for example)

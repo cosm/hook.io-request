@@ -2,8 +2,8 @@
 
 var RequestHook = require('../lib/request').RequestHook;
 
-var myhook = new RequestHook({ 
+var hook = new RequestHook({ 
   name: "the-request-hook"
 });
 
-myhook.start();
+hook.start();
